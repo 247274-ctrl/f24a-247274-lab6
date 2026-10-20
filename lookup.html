@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Lookup | CS301L Lab 06</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="lookup.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-mark" aria-hidden="true">L<span>.</span></div>
+    <div class="brand-copy">
+      <p class="eyebrow">CS301L · LAB 06</p>
+      <h1>THE LOOKUP</h1>
+      <p class="subtitle">A small counter for things worth finding.</p>
+    </div>
+    <div class="header-chip"><span class="live-dot"></span> LOCAL DESK</div>
+  </header>
+
+  <main class="page-shell">
+    <section class="intro-row">
+      <div>
+        <p class="section-kicker">01 / SEARCH THE SHELF</p>
+        <h2>What are you looking for?</h2>
+        <p class="intro-text">Enter an item name to fetch its price from the server.</p>
+      </div>
+      <div class="mini-stamp">LOOKUP<br>NO. 247274</div>
+    </section>
+
+    <section class="search-panel" aria-label="Find an item">
+      <label for="item">ITEM NAME</label>
+      <div class="search-controls">
+        <input id="item" name="item" type="text" placeholder="Try pen, copy, or tea" autocomplete="off">
+        <button id="find" type="button"><span>Find item</span><span class="arrow">↗</span></button>
+      </div>
+      <p class="hint">The server responds after a short wait. Item names are not case-sensitive.</p>
+    </section>
+
+    <p id="status" class="status-line" role="status" aria-live="polite">Ready when you are — search for an item.</p>
+
+    <section class="desk-grid">
+      <article class="item-card">
+        <div class="card-topline"><span>FOUND ITEM</span><span class="card-icon">⌕</span></div>
+        <div class="item-illustration" aria-hidden="true"><span class="illustration-circle"></span><span class="illustration-line"></span><span class="illustration-dot"></span></div>
+        <p class="card-label">ITEM NAME</p>
+        <h3 id="card-name"></h3>
+        <div class="price-row"><span>Price</span><strong>Rs <span id="card-price"></span></strong></div>
+      </article>
+
+      <article class="slip-card">
+        <div class="slip-heading"><div><p class="section-kicker">02 / YOUR SLIP</p><h3>Find history</h3></div><span class="slip-number">#SLIP</span></div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>ITEM</th><th>PRICE</th><th>TIMES</th></tr></thead>
+            <tbody id="slip"></tbody>
+          </table>
+        </div>
+        <p class="slip-note">Repeated searches increase Times instead of adding a duplicate row.</p>
+      </article>
+    </section>
+
+    <section class="figures">
+      <div class="figure-card"><span class="figure-label">FOUND</span><strong id="found">0</strong><span class="figure-foot">unique items</span></div>
+      <div class="figure-card feature-figure"><span class="figure-label">DEAREST</span><strong>Rs <span id="dearest">0</span></strong><span class="figure-foot">highest listed price</span></div>
+    </section>
+
+    <footer><span>CS301L / FULL STACK</span><span>ROLL NO. 247274</span><span>LAB 06 — A PAGE THAT WAITS</span></footer>
+  </main>
+</body>
+</html>
